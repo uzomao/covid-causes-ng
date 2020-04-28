@@ -4,8 +4,8 @@ import React from "react"
 
 const Header = ({ siteTitle, siteDescription }) => (
   <section class="hero">
-    <div class="hero-body">
-      <div class="container is-fluid">
+    <div>
+      <div class="section">
         <h1 class="title">
           {siteTitle}
         </h1>

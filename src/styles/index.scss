@@ -4,22 +4,32 @@
 
 //brand colours
 $green: #3D7F58;
-$light-green: #D9F2E8;
+$light-green: #C8EBDD;
+$lighter-green: #D9F2E8;
 $orange: #E67E22;
 $white: #FFFFFF;
 
+//text
 $title-size: 4.5rem;
 $title-weight: 400;
+
+//layout
 $hero-body-padding: 3rem 0;
 $section-padding: 1.5rem 0.75rem;
 
-//customizing bulma variables
+//table
+$table-cell-border: none;
+$table-head-background-color: $green;
+$table-head-cell-color: $white;
+$table-striped-row-even-background-color: $lighter-green;
+$table-cell-padding: 1.25em 0.75em;
+$table-row-hover-background-color: $light-green;
+$table-striped-row-even-hover-background-color: $light-green;
+
+//system
 $family-sans-serif: "Karla", sans-serif;
 $primary: $green;
 $info: $orange;
-$table-head-background-color: $green;
-$table-head-cell-color: $white;
-
 
 
 

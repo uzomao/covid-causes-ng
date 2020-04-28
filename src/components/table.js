@@ -17,17 +17,17 @@ const Table = () => {
         }
     `)
 
-    const tableBody = query.allContentfulCause.nodes.map(({ name, neighbourhood, city, aidProvided}) => 
-        <tr>
-            <td>{name}</td>
-            <td>{neighbourhood}</td>
-            <td>{city}</td>
-            <td>{aidProvided}</td>
-        </tr>
-    )
+    const tableBody = query.allContentfulCause.nodes.map(({ name, neighbourhood, city, aidProvided}) => {
+        return <tr>
+                <td>{name}</td>
+                <td>{neighbourhood}</td>
+                <td>{city}</td>
+                <td>{aidProvided}</td>
+            </tr>
+    })
 
     return (
-        <table class="table is-fullwidth">
+        <table class="table is-fullwidth is-striped is-hoverable">
             <thead>
                 <tr>
                     <th>Name</th>
