@@ -19,7 +19,7 @@ const Table = () => {
     `)
 
     const tableBody = query.allContentfulCause.nodes.map(({ name, neighbourhood, city, aidProvided, slug}) => 
-            <tr onClick={() => navigate(`/cause/${slug}`)}>
+            <tr onClick={() => navigate(`/cause/${slug}`)} style={{cursor: 'pointer'}}>
                 <td>{name}</td>
                 <td>{neighbourhood}</td>
                 <td>{city}</td>
