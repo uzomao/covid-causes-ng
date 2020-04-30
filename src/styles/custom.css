@@ -1,0 +1,11 @@
+@media screen and (max-device-width: 900px){
+
+    .table {
+        position: absolute;
+        left: 0;
+    }
+
+    .column p {
+        padding-bottom: .75em;
+    }
+}

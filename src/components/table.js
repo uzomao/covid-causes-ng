@@ -2,6 +2,8 @@ import React from 'react'
 
 import { graphql, useStaticQuery, navigate } from 'gatsby'
 
+import '../styles/custom.css'
+
 const Table = () => {
 
     const query = useStaticQuery(graphql`
@@ -27,7 +29,7 @@ const Table = () => {
                 <td>{name}</td>
                 <td>{neighbourhood}</td>
                 <td>{city}</td>
-                <td>{aidProvided}</td>
+                <td className="has-text-right">{aidProvided}</td>
             </tr>
     )
 
@@ -38,7 +40,7 @@ const Table = () => {
                     <th>Name</th>
                     <th>Neighbourhood</th>
                     <th>City</th>
-                    <th>Aid Provided</th>
+                    <th className="has-text-right">Aid Provided</th>
                 </tr>
             </thead>
             <tbody>

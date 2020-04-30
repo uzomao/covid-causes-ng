@@ -4,6 +4,8 @@ import { graphql, Link } from 'gatsby'
 
 import Img from "gatsby-image"
 
+import '../styles/custom.css'
+
 export const query = graphql`
     query($slug: String) {
         contentfulCause (slug: {
@@ -51,7 +53,7 @@ const CauseTemplate = (props) => {
                 <div className="hero-body">
                     <div className="container is-fluid columns">
                         <div className="column">
-                            <h1 className="title">
+                            <h1 className="title is-size-1-mobile">
                                 {name}
                             </h1>
                             <h2 className="subtitle is-uppercase">
@@ -112,7 +114,7 @@ const CauseTemplate = (props) => {
                     </div>
                 </section>
 
-                <section className="section">
+                <section className="column">
                     <div>
                         <h4 className="title is-4">Contact Info</h4>
 
