@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
+    <>
     <section className="section">
       <Header siteTitle={data.site.siteMetadata.title} 
         siteDescription={data.site.siteMetadata.description} 
@@ -33,6 +34,14 @@ const Layout = ({ children }) => {
         <main>{children}</main>
       </div>
     </section>
+    <footer className="footer">
+      <div class="content has-text-centered">
+        <p>
+          Covid Causes Nigeria &copy; {new Date().getFullYear()} 
+        </p>
+      </div>
+    </footer>
+    </>
   )
 }
 

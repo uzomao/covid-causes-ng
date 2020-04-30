@@ -4,8 +4,6 @@ import { graphql, Link } from 'gatsby'
 
 import Img from "gatsby-image"
 
-import '../styles/custom.css'
-
 export const query = graphql`
     query($slug: String) {
         contentfulCause (slug: {
@@ -73,13 +71,13 @@ const CauseTemplate = (props) => {
             <main className="container is-fluid">
                 <section className="section">
                     <div className="columns">
-                        <div className="column is-half is-size-5">
+                        <div className="column is-half is-size-5 content">
                             <p><b>Neighbourhood: </b> {neighbourhood}</p>
                             <p><b>City: </b> {city}</p>
                             <p><b>Aid Provided: </b> {aidProvided}</p>
                         </div>
 
-                        <div className="column is-half has-text-right has-text-left-mobile">
+                        <div className="column is-half has-text-right has-text-left-mobile content">
                             <h4 className="title is-4">Bank Details</h4>
                             <p>{bankDetails}</p>
                         </div>
@@ -87,14 +85,14 @@ const CauseTemplate = (props) => {
                 </section>
 
                 <section className="section">
-                    <div>
+                    <div class="content">
                         <h4 className="title is-4">Summary of Activities</h4>
                         <p>{summaryOfActivities.summaryOfActivities}</p>
                     </div>
                 </section>
 
                 <section className="section">
-                    <div>
+                    <div class="content">
                         <h4 className="title is-4">Gallery</h4>
                         <div className="columns">
                             {
@@ -115,7 +113,7 @@ const CauseTemplate = (props) => {
                 </section>
 
                 <section className="column">
-                    <div>
+                    <div class="content">
                         <h4 className="title is-4">Contact Info</h4>
 
                         <p><b>Website: </b> 

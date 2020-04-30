@@ -2,7 +2,7 @@ import React from 'react'
 
 import { graphql, useStaticQuery, navigate } from 'gatsby'
 
-import '../styles/custom.css'
+import '../styles/table.css'
 
 const Table = () => {
 
