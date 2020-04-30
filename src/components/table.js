@@ -18,8 +18,12 @@ const Table = () => {
         }
     `)
 
-    const tableBody = query.allContentfulCause.nodes.map(({ name, neighbourhood, city, aidProvided, slug}) => 
-            <tr onClick={() => navigate(`/cause/${slug}`)} style={{cursor: 'pointer'}}>
+    const tableBody = query.allContentfulCause.nodes.map(({ name, neighbourhood, city, aidProvided, slug}, index) => 
+            <tr 
+                key={index}
+                onClick={() => navigate(`/cause/${slug}`)} 
+                style={{cursor: 'pointer'}}
+            >
                 <td>{name}</td>
                 <td>{neighbourhood}</td>
                 <td>{city}</td>
@@ -28,7 +32,7 @@ const Table = () => {
     )
 
     return (
-        <table class="table is-fullwidth is-striped is-hoverable">
+        <table className="table is-fullwidth is-striped is-hoverable">
             <thead>
                 <tr>
                     <th>Name</th>

@@ -2,6 +2,8 @@ import React from 'react'
 
 import { graphql, Link } from 'gatsby'
 
+import Img from "gatsby-image"
+
 export const query = graphql`
     query($slug: String) {
         contentfulCause (slug: {
@@ -15,10 +17,16 @@ export const query = graphql`
             summaryOfActivities {
                 summaryOfActivities
             }
+            bankDetails
             instagram
             website
             email
             phone
+            images {
+                fluid {
+                    ...GatsbyContentfulFluid
+                }
+            }
         }
     }
 `
@@ -32,70 +40,98 @@ const CauseTemplate = (props) => {
         city,
         aidProvided,
         summaryOfActivities,
-        instagram, website, email, phone
+        bankDetails,
+        instagram, website, email, phone,
+        images
      } = props.data.contentfulCause
     
     return (
         <div>
-            <section class="hero is-primary">
-                <div class="hero-body">
-                    <div class="container is-fluid columns">
-                        <div class="column">
-                            <h1 class="title">
+            <section className="hero is-primary">
+                <div className="hero-body">
+                    <div className="container is-fluid columns">
+                        <div className="column">
+                            <h1 className="title">
                                 {name}
                             </h1>
-                            <h2 class="subtitle is-uppercase">
+                            <h2 className="subtitle is-uppercase">
                                 {officialStatus}
                             </h2>
                         </div>
 
-                        <div class="column has-text-right has-text-left-mobile">
-                            <Link to="/" class="button is-info">
-                                <h4 class="is-size-4">Back to all</h4>
+                        <div className="column has-text-right has-text-left-mobile">
+                            <Link to="/" className="button is-info">
+                                <h4 className="is-size-4">Back to all</h4>
                             </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <main class="container is-fluid">
-                <section class="section">
-                    <div class="columns">
-                        <div class="column is-half is-size-5">
+            <main className="container is-fluid">
+                <section className="section">
+                    <div className="columns">
+                        <div className="column is-half is-size-5">
                             <p><b>Neighbourhood: </b> {neighbourhood}</p>
                             <p><b>City: </b> {city}</p>
                             <p><b>Aid Provided: </b> {aidProvided}</p>
                         </div>
 
-                        <div class="column is-half has-text-right has-text-left-mobile">
-                            <h4 class="title is-4">Bank Details</h4>
-                            <p>-</p>
+                        <div className="column is-half has-text-right has-text-left-mobile">
+                            <h4 className="title is-4">Bank Details</h4>
+                            <p>{bankDetails}</p>
                         </div>
                     </div>
                 </section>
 
-                <section class="section">
+                <section className="section">
                     <div>
-                        <h4 class="title is-4">Summary of Activities</h4>
+                        <h4 className="title is-4">Summary of Activities</h4>
                         <p>{summaryOfActivities.summaryOfActivities}</p>
                     </div>
                 </section>
 
-                <section class="section">
+                <section className="section">
                     <div>
-                        <h4 class="title is-4">Gallery</h4>
-                        <p></p>
+                        <h4 className="title is-4">Gallery</h4>
+                        <div className="columns">
+                            {
+                                images ?
+                                    images.map((image, index) => 
+                                        <Img 
+                                            key={index}
+                                            className="column is-one-third"
+                                            fluid={image.fluid} 
+                                            alt={`photo of ${name} in action`} 
+                                        />
+                                    )
+                                    :
+                                    <p className="column is-one-third">No images provided</p>
+                            }
+                        </div>
                     </div>
                 </section>
 
-                <section class="section">
+                <section className="section">
                     <div>
-                        <h4 class="title is-4">Contact Info</h4>
+                        <h4 className="title is-4">Contact Info</h4>
 
-                        <p><b>Website: </b> {website}</p>
-                        <p><b>Email: </b> {email}</p>
+                        <p><b>Website: </b> 
+                            <a href={website} target='_blank' rel="noopener noreferrer">
+                                {website}
+                            </a>
+                        </p>
+                        <p><b>Email: </b> 
+                            <a href={`mailto:${email}`} target='_blank' rel="noopener noreferrer">
+                                {email}
+                            </a>
+                        </p>
                         <p><b>Phone: </b> {phone}</p>
-                        <p><b>Instagram: </b> {instagram}</p>
+                        <p><b>Instagram: </b> 
+                            <a href={`https://instagram.com/${instagram}`} target='_blank' rel="noopener noreferrer">
+                                {instagram}
+                            </a>
+                        </p>
                     </div>
                 </section>
             </main>

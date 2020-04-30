@@ -3,13 +3,13 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle, siteDescription }) => (
-  <section class="hero">
+  <section className="hero">
     <div>
-      <div class="section">
-        <h1 class="title">
+      <div className="section">
+        <h1 className="title">
           {siteTitle}
         </h1>
-        <h2 class="subtitle">
+        <h2 className="subtitle">
           {siteDescription}
         </h2>
       </div>

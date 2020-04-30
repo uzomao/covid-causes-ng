@@ -11,13 +11,13 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
 
-    <div class="section">
-      <button class="button is-info is-medium">
+    <div className="section">
+      <button className="button is-info is-medium">
         Filter
       </button>
     </div>
 
-    <main class="section">
+    <main className="section">
       <Table />
     </main>
     
