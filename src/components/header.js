@@ -7,7 +7,7 @@ const Header = ({ siteTitle, siteDescription }) => (
     <div>
       <div className="section">
         <h1 className="title">
-          {siteTitle}
+          {siteTitle} <span role='img' aria-label='nigerian-flag' className="is-size-2">🇳🇬</span>
         </h1>
         <h2 className="subtitle">
           {siteDescription}
