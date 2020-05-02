@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
       </div>
     </section>
     <footer className="footer">
-      <div class="content has-text-centered">
+      <div className="content has-text-centered">
         <p>
           Covid Causes Nigeria &copy; {new Date().getFullYear()} 
         </p>
