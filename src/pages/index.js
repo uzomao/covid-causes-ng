@@ -11,11 +11,11 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
 
-    <div className="section">
+    {/* <div className="section">
       <button className="button is-info is-medium">
         Filter
       </button>
-    </div>
+    </div> */}
 
     <main className="section">
       <Table />

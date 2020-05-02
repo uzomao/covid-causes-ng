@@ -22,6 +22,9 @@ export const query = graphql`
             website
             email
             phone
+            twitter
+            facebook
+            notes
             images {
                 fluid {
                     ...GatsbyContentfulFluid
@@ -41,7 +44,8 @@ const CauseTemplate = (props) => {
         aidProvided,
         summaryOfActivities,
         bankDetails,
-        instagram, website, email, phone,
+        instagram, website, email, phone, twitter, facebook,
+        notes,
         images
      } = props.data.contentfulCause
     
@@ -116,22 +120,53 @@ const CauseTemplate = (props) => {
                     <div class="content">
                         <h4 className="title is-4">Contact Info</h4>
 
-                        <p><b>Website: </b> 
-                            <a href={website} target='_blank' rel="noopener noreferrer">
-                                {website}
-                            </a>
-                        </p>
-                        <p><b>Email: </b> 
-                            <a href={`mailto:${email}`} target='_blank' rel="noopener noreferrer">
-                                {email}
-                            </a>
-                        </p>
-                        <p><b>Phone: </b> {phone}</p>
-                        <p><b>Instagram: </b> 
-                            <a href={`https://instagram.com/${instagram}`} target='_blank' rel="noopener noreferrer">
-                                {instagram}
-                            </a>
-                        </p>
+                        {
+                            website &&
+                                <p><b>Website: </b> 
+                                    <a href={website} target='_blank' rel="noopener noreferrer">
+                                        {website}
+                                    </a>
+                            </p>
+                        }
+                        {
+                            email &&
+                                <p><b>Email: </b> 
+                                    <a href={`mailto:${email}`} target='_blank' rel="noopener noreferrer">
+                                        {email}
+                                    </a>
+                                </p>
+                        }
+                        {
+                            phone &&
+                                <p><b>Phone: </b> {phone}</p>
+                        }
+                        {
+                            instagram &&
+                                <p><b>Instagram: </b> 
+                                    <a href={`https://instagram.com/${instagram}`} target='_blank' rel="noopener noreferrer">
+                                        {instagram}
+                                    </a>
+                                </p>
+                        }
+                        {
+                            twitter &&
+                                <p><b>Twitter: </b> 
+                                    <a href={`https://twitter.com/${twitter}`} target='_blank' rel="noopener noreferrer">
+                                        {twitter}
+                                    </a>
+                                </p>
+                        }
+                        {
+                            facebook &&
+                                <p><b>Facebook: </b> 
+                                    <a href={`https://facebook.com/${facebook}`} target='_blank' rel="noopener noreferrer">
+                                        {facebook}
+                                    </a>
+                                </p>
+                        }
+                        {
+                            notes && <p><b>Notes: </b> {notes}</p>
+                        }
                     </div>
                 </section>
             </main>
