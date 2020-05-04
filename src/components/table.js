@@ -72,6 +72,17 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
 
     return (
         <>
+        {
+            filterValue &&
+                <div class="level" style={{width: '15%'}}>
+                    <div class="level-left">
+                        <p><b>Filter:</b> {filterValue} </p>
+                    </div>
+                    <div class="level-right">
+                        <button className="button is-light" onClick={() => setFilterValue()}>Clear</button>
+                    </div>
+                </div>
+        }
         <table className="table is-fullwidth is-striped is-hoverable">
             <thead>
                 <tr>
