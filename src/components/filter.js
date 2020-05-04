@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import '../styles/filter.css'
 
-const Filter = ({ filters, setFilterValue, setShowFilter }) => {
+const Filter = ({ filters, setFilterValue, setShowFilter, setTableFilterBy }) => {
 
     const filterParams = [
         { name: 'city', formatted: 'City' },
@@ -43,7 +43,10 @@ const Filter = ({ filters, setFilterValue, setShowFilter }) => {
                     {
                         filterParams.map(({ name, formatted}, index) => 
                             <h4 key={index}>
-                                <button onClick={() => setFilter(name)} className="is-size-2 filter-btn" style={hiddenBtnStyle}>
+                                <button onClick={() => { 
+                                    setFilter(name)
+                                    setTableFilterBy(name)
+                                }} className="is-size-2 filter-btn" style={hiddenBtnStyle}>
                                     {formatted}
                                 </button>
                             </h4>

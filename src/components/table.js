@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { graphql, useStaticQuery, navigate } from 'gatsby'
 
@@ -31,6 +31,8 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
         digitalEvidence: [true, false]
     }
 
+    const [ tableFilterBy, setTableFilterBy ] = useState('city')
+
     function addFilters() {
 
         const argumentKeys = ['neighbourhood', 'city', 'aidProvided', 'officialStatus', 'digitalEvidence']
@@ -45,7 +47,9 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
     }
 
     const entries = filterValue ? 
-        query.allContentfulCause.nodes.filter(entry => {return entry['city'] && entry['city'].includes(filterValue)} )
+        query.allContentfulCause.nodes.filter(entry => {
+            return entry[tableFilterBy] && entry[tableFilterBy].includes(filterValue)
+        })
         :
         query.allContentfulCause.nodes
 
@@ -82,7 +86,11 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
             </tbody>
         </table>
 
-        { showFilter && <Filter filters={filters} setFilterValue={setFilterValue} setShowFilter={setShowFilter} /> }
+        { showFilter && <Filter filters={filters} 
+                                setFilterValue={setFilterValue} 
+                                setShowFilter={setShowFilter} 
+                                setTableFilterBy={setTableFilterBy}
+                                /> }
         </>
     )
 }
