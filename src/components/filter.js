@@ -30,7 +30,8 @@ const Filter = ({ filters, setFilterValue, setShowFilter, setTableFilterBy }) =>
                     backgroundColor: '#1E272E',
                     color: '#FFFFFF',
                     opacity: 0.95,
-                    overflowY: 'none'
+                    overflowY: 'scroll',
+                    position: 'fixed'
                 }}
         >
             
@@ -56,7 +57,7 @@ const Filter = ({ filters, setFilterValue, setShowFilter, setTableFilterBy }) =>
 
                 {
                     filter &&
-                        <div className="column content">
+                        <div className="column content" style={{overflowY: 'scroll'}}>
                             {
                                 filters[filter].map((filter, index) => 
                                     <p key={index}>
@@ -64,7 +65,7 @@ const Filter = ({ filters, setFilterValue, setShowFilter, setTableFilterBy }) =>
                                             setFilterValue(filter)
                                             setShowFilter(false) //close the filtering overlay
                                         }}
-                                            className="is-size-4 filter-btn" style={hiddenBtnStyle}
+                                            className="is-size-4 filter-btn has-text-left" style={hiddenBtnStyle}
                                         >
                                             {filter}
                                         </button>
