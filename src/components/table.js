@@ -6,7 +6,7 @@ import '../styles/table.css'
 
 import Filter from '../components/filter'
 
-const Table = ({ showFilter }) => {
+const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
 
     const query = useStaticQuery(graphql`
         query {
@@ -36,14 +36,20 @@ const Table = ({ showFilter }) => {
         const argumentKeys = ['neighbourhood', 'city', 'aidProvided', 'officialStatus', 'digitalEvidence']
 
         argumentKeys.forEach((key, index) => {
-            const argument = arguments[index]
-            if(argument !== "-" || argument !== null){
+            const argument = arguments[index] //arguments[0] = neighbourhood e.g Karimo
+            //split string 'Karimo, Jabi, Gishiri' into an array with three properties
+            argument && argument.split(', ').forEach((argument) => {
                 !filters[key].includes(argument) && filters[key].push(argument)
-            }
+            })
         })
     }
 
-    const tableBody = query.allContentfulCause.nodes.map(({ name, neighbourhood, city, aidProvided, officialStatus, 
+    const entries = filterValue ? 
+        query.allContentfulCause.nodes.filter(entry => {return entry['city'] && entry['city'].includes(filterValue)} )
+        :
+        query.allContentfulCause.nodes
+
+    const tableBody = entries.map(({ name, neighbourhood, city, aidProvided, officialStatus, 
         digitalEvidence, slug}, index) => {
 
             addFilters(neighbourhood, city, aidProvided, officialStatus, digitalEvidence)
@@ -75,7 +81,8 @@ const Table = ({ showFilter }) => {
                 {tableBody}
             </tbody>
         </table>
-        { showFilter && <Filter filters={filters} /> }
+
+        { showFilter && <Filter filters={filters} setFilterValue={setFilterValue} setShowFilter={setShowFilter} /> }
         </>
     )
 }

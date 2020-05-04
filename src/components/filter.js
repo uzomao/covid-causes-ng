@@ -2,22 +2,31 @@ import React, { useState } from 'react'
 
 import '../styles/filter.css'
 
-const Filter = ({ filters }) => {
+const Filter = ({ filters, setFilterValue, setShowFilter }) => {
 
     const filterParams = [
         { name: 'city', formatted: 'City' },
         { name: 'neighbourhood', formatted: 'Neighbourhood' },
-        { name: 'aidProvided', formatted: 'Aid Provided'},
-        {name: 'officialStatus', formatted: 'Official Status'},
-        {name: 'digitalEvidence', formatted: 'Digital Evidence'}
+        { name: 'aidProvided', formatted: 'Aid Provided' },
+        { name: 'officialStatus', formatted: 'Official Status' },
+        { name: 'digitalEvidence', formatted: 'Digital Evidence' }
     ]
 
-    const [ filter, setFilter ] = useState('')
+    const [ filter, setFilter ] = useState(null)
+    
+    //setFilter is a state property of the filter component that sets what we are filtering by white
+    //setFilterValue is a state setter imported from the table component that sets the value of that thing we are filtering by
+
+    const hiddenBtnStyle = {
+        background: 'none',
+        border: 'none',
+        color: '#FFF',
+        cursor: 'pointer'
+    }
 
     return (
         <div className="is-overlay section" 
-            style={{width: '100vw', 
-                    height: '100vh', 
+            style={{
                     backgroundColor: '#1E272E',
                     color: '#FFFFFF',
                     opacity: 0.95,
@@ -32,14 +41,9 @@ const Filter = ({ filters }) => {
             <div className="columns section" style={{paddingLeft: 0}}>
                 <div className="column content">
                     {
-                        filterParams.map(({ name, formatted}) => 
-                            <h4>
-                                <button onClick={() => setFilter(name)} className="is-size-2 filter-btn" style={{
-                                        background: 'none',
-                                        border: 'none',
-                                        color: '#FFF',
-                                        cursor: 'pointer'
-                                    }}>
+                        filterParams.map(({ name, formatted}, index) => 
+                            <h4 key={index}>
+                                <button onClick={() => setFilter(name)} className="is-size-2 filter-btn" style={hiddenBtnStyle}>
                                     {formatted}
                                 </button>
                             </h4>
@@ -47,11 +51,25 @@ const Filter = ({ filters }) => {
                     }
                 </div>
 
-                <div className="column content">
-                    {
-                        filters[filter].map((filter) => <p>{filter}</p>)
-                    }
-                </div>
+                {
+                    filter &&
+                        <div className="column content">
+                            {
+                                filters[filter].map((filter, index) => 
+                                    <p key={index}>
+                                        <button onClick={() => {
+                                            setFilterValue(filter)
+                                            setShowFilter(false) //close the filtering overlay
+                                        }}
+                                            className="is-size-4 filter-btn" style={hiddenBtnStyle}
+                                        >
+                                            {filter}
+                                        </button>
+                                    </p>
+                                )
+                            }
+                        </div>
+                }
             </div>
         </div>
     )
