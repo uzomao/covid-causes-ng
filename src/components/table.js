@@ -4,6 +4,8 @@ import { graphql, useStaticQuery, navigate } from 'gatsby'
 
 import '../styles/table.css'
 
+import Filter from '../components/filter'
+
 const Table = ({ showFilter }) => {
 
     const query = useStaticQuery(graphql`
@@ -59,6 +61,7 @@ const Table = ({ showFilter }) => {
     })
 
     return (
+        <>
         <table className="table is-fullwidth is-striped is-hoverable">
             <thead>
                 <tr>
@@ -72,6 +75,8 @@ const Table = ({ showFilter }) => {
                 {tableBody}
             </tbody>
         </table>
+        { showFilter && <Filter filters={filters} /> }
+        </>
     )
 }
 
