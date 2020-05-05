@@ -46,12 +46,12 @@ const About = () => {
                     </p>
 
                     <p>
-                        Covid Causes has been created by G.rizo a.k.a. Ihu Anyanwu (DJ/musician/culture worker) 
+                        Covid Causes has been created by <a href="https://instagram.com/naijatechcreatives">G.rizo a.k.a. Ihu Anyanwu</a> (DJ/musician/culture worker)
                         and <a href="https://uzomaorji.com" target="blank_" rel="noopener noreferrer">Uzoma Orji</a> (artist/technologist).
                     </p>
 
                     <p>
-                        Covid Causes is supported by Naija Tech Creatives
+                        Covid Causes is supported by <a href="https://naijatechcreatives.com">Naija Tech Creatives</a>.
                     </p>
 
                 </div>
