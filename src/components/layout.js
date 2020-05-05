@@ -26,10 +26,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
-    <section className="section">
-      <Header siteTitle={data.site.siteMetadata.title} 
-        siteDescription={data.site.siteMetadata.description} 
-      />
+    <section>
+      {
+        typeof window !== `undefined` && window.location.pathname === "/" &&
+          <Header siteTitle={data.site.siteMetadata.title} 
+            siteDescription={data.site.siteMetadata.description} 
+          />
+      }
+      
       <div>
         <main>{children}</main>
       </div>
