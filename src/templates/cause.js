@@ -28,7 +28,7 @@ export const query = graphql`
             facebook
             notes
             images {
-                fluid {
+                fluid{
                     ...GatsbyContentfulFluid
                 }
             }
@@ -101,13 +101,14 @@ const CauseTemplate = (props) => {
                     <section className="section">
                         <div class="content">
                             <h4 className="title is-4">Gallery</h4>
-                            <div className="columns">
+                            <div className="columns is-multiline">
                                 {
                                     images ?
                                         images.map((image, index) => 
                                             <Img 
                                                 key={index}
                                                 className="column is-one-third"
+                                                // style={{margin: '.1em'}}
                                                 fluid={image.fluid} 
                                                 alt={`photo of ${name} in action`} 
                                             />
