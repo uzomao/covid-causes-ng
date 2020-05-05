@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Covid Causes ng`,
+        short_name: `covid causes ng`,
         start_url: `/`,
         background_color: `#3D7F58`,
         theme_color: `#3D7F58`,

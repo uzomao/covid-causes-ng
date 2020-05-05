@@ -13,7 +13,7 @@ const IndexPage = () => {
     <Layout showHeader={true} pageTitle="Home">
 
       <div className="section">
-        <button className="button is-info is-medium" onClick={() => { 
+        <button className="button is-info is-medium" style={{boxShadow: '3px 3px #dbdbdb'}} onClick={() => { 
             setShowFilter(!showFilter)
             setFilterValue(null)
             /**

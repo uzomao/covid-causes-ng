@@ -74,7 +74,7 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
         <>
         {
             filterValue &&
-                <div class="level" style={{width: '15%'}}>
+                <div class="level" style={{width: '18%'}}>
                     <div class="level-left">
                         <p><b>Filter:</b> {filterValue} </p>
                     </div>
