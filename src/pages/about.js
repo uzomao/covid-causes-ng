@@ -2,12 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 
 const About = () => {
     return (
-        <Layout>
-            <SEO title="About" />
+        <Layout pageTitle="About">
 
             <section className="hero is-primary">
                 <div className="hero-body">
@@ -46,7 +44,7 @@ const About = () => {
                     </p>
 
                     <p>
-                        Covid Causes has been created by <a href="https://instagram.com/naijatechcreatives">G.rizo a.k.a. Ihu Anyanwu</a> (DJ/musician/culture worker)
+                        Covid Causes has been created by <a href="https://instagram.com/g_rizo">G.rizo a.k.a. Ihu Anyanwu</a> (DJ/musician/culture worker)
                         and <a href="https://uzomaorji.com" target="blank_" rel="noopener noreferrer">Uzoma Orji</a> (artist/technologist).
                     </p>
 

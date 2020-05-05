@@ -10,9 +10,11 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import SEO from '../components/seo'
+
 import "../styles/index.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showHeader, pageTitle }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,9 +28,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
+    <SEO title={pageTitle} />
+
     <section>
       {
-        typeof window !== `undefined` && window.location.pathname === "/" &&
+        showHeader &&
           <Header siteTitle={data.site.siteMetadata.title} 
             siteDescription={data.site.siteMetadata.description} 
           />

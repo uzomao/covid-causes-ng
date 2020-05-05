@@ -5,7 +5,7 @@ import React from "react"
 const Header = ({ siteTitle, siteDescription }) => (
   <section className="hero">
       <div className="section columns">
-        <div className="column">
+        <div className="column is-two-thirds">
           <h1 className="title">
             {siteTitle} <span role='img' aria-label='nigerian-flag' className="is-size-2">🇳🇬</span>
           </h1>

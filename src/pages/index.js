@@ -2,8 +2,6 @@ import React, { useState } from "react"
 
 import Layout from "../components/layout"
 
-import SEO from "../components/seo"
-
 import Table from '../components/table'
 
 const IndexPage = () => {
@@ -12,8 +10,7 @@ const IndexPage = () => {
   const [ filterValue, setFilterValue ] = useState(null)
 
   return (
-    <Layout>
-      <SEO title="Home" />
+    <Layout showHeader={true} pageTitle="Home">
 
       <div className="section">
         <button className="button is-info is-medium" onClick={() => { 
