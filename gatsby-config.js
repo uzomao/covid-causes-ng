@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `Covid Causes`,
+    titleTemplate: "%s | Covid Causes Nigeria",
     description: `A directory of individuals and organisations in Nigeria providing relief during the crisis.`,
     author: `Covid Causes NG`,
     keywords: `covid, covid 19, coronavirus, lockdown, Nigeria, Abuja, Lagos`,
     siteUrl: `https://covidcauses.ng`,
-    siteImg: `/src/images/icon.png`
+    image: `/src/images/icon.png`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
