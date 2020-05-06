@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image, pathname }) => (
+const SEO = ({ title, description, image, pathname, article }) => (
     <StaticQuery query={query} render={({
         site: {
           siteMetadata: {
@@ -12,8 +12,7 @@ const SEO = ({ title, description, image, pathname }) => (
             siteUrl,
             titleTemplate,
             defaultImage,
-            keywords,
-            author
+            keywords
           }
         }
       }) => {
@@ -22,52 +21,31 @@ const SEO = ({ title, description, image, pathname }) => (
           description: description || defaultDescription,
           url: `${siteUrl}${pathname || '/'}`,
           image: `${siteUrl}${image || defaultImage}`,
-          author: author,
           keywords: keywords
         }
         return (
             <>
             <Helmet title={seo.title} titleTemplate={titleTemplate}>
-
                 <meta name="description" content={seo.description} />
-
-                <meta name="keywords" content={seo.keywords} />
-
+                {seo.url && <meta property="og:url" content={seo.url} />}
+                {(article ? true : null) && (
                 <meta property="og:type" content="website" />
-
-                {seo.url && 
-                  <meta property="og:url" content={seo.url} />
-                }
-
-                {seo.title && 
-                  <meta property="og:title" content={seo.title} />
-                }
-
-                {seo.description && 
-                  <meta property="og:description" content={seo.description} />
-                }
-
-                {seo.image && 
-                  <meta property="og:image" content={seo.image} />
-                }
-
+                )}
+                {seo.title && <meta property="og:title" content={seo.title} />}
+                {seo.description && (
+                <meta property="og:description" content={seo.description} />
+                )}
+                {seo.image && <meta property="og:image" content={seo.image} />}
                 <meta name="twitter:card" content="summary_large_image" />
-                
-                {author && 
-                  <meta name="twitter:creator" content={author} />
-                }
-
-                {seo.title && 
-                  <meta name="twitter:title" content={seo.title} />
-                }
-
-                {seo.description && 
-                  <meta name="twitter:description" content={seo.description} />
-                }
-
-                {seo.image && 
-                  <meta name="twitter:image" content={seo.image} />
-                }
+                {/* {twitterUsername && (
+                <meta name="twitter:creator" content={twitterUsername} />
+                )} */}
+                {seo.title && <meta name="twitter:title" content={seo.title} />}
+                {seo.description && (
+                <meta name="twitter:description" content={seo.description} />
+                )}
+                {seo.image && <meta name="twitter:image" content={seo.image} />}
+                <meta name="keywords" content={seo.keywords} />
             </Helmet>
             </>
         )
@@ -86,8 +64,7 @@ const query = graphql`
         siteUrl
         titleTemplate
         defaultImage: image
-        keywords
-        author
+        keywords: keywords
       }
     }
   }
