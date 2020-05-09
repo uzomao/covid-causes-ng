@@ -11,10 +11,11 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import SEO from '../components/seo'
+import Logo from '../components/logo'
 
 import "../styles/index.scss"
 
-const Layout = ({ children, showHeader, pageTitle }) => {
+const Layout = ({ children, showHeader, pageTitle, showLogo }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -37,16 +38,20 @@ const Layout = ({ children, showHeader, pageTitle }) => {
             siteDescription={data.site.siteMetadata.description} 
           />
       }
-      
-      <div>
-        <main>{children}</main>
-      </div>
     </section>
-    <footer className="footer">
-      <div className="content has-text-centered">
-        <p>
-          Covid Causes Nigeria by Naija Tech Creatives &copy; {new Date().getFullYear()} 
-        </p>
+      
+    <main>
+      {children}
+    </main>
+
+    <footer>
+      { showLogo && <Logo /> }
+      <div className="footer">
+        <div className="content has-text-centered">
+          <p>
+            Covid Causes Nigeria by Naija Tech Creatives &copy; {new Date().getFullYear()} 
+          </p>
+        </div>
       </div>
     </footer>
     </>

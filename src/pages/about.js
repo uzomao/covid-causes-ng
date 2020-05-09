@@ -2,11 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from "../components/layout"
-import Logo from "../components/logo"
 
 const About = () => {
     return (
-        <Layout pageTitle="About">
+        <Layout pageTitle="About" showLogo={true}>
 
             <section className="hero is-primary">
                 <div className="hero-body">
@@ -50,13 +49,13 @@ const About = () => {
                     </p>
 
                     <p>
-                        Covid Causes is supported by <a href="https://naijatechcreatives.com">Naija Tech Creatives</a>.
+                        Covid Causes is supported by <a href="https://naijatechcreatives.com">Naija Tech Creatives</a>.{` `}
+                        Please email <a href="mailto:naijatechcreatives@gmail.com">naijatechcreatives@gmail.com</a> if you would 
+                        like to add your relief initiative.
                     </p>
 
                 </div>
             </section>
-
-            <Logo />
 
         </Layout>
     )

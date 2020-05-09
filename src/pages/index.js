@@ -4,17 +4,16 @@ import Layout from "../components/layout"
 
 import Table from '../components/table'
 
-import Logo from '../components/logo'
-
 const IndexPage = () => {
 
   const [ showFilter, setShowFilter ] = useState(false)
   const [ filterValue, setFilterValue ] = useState(null)
 
   return (
-    <Layout showHeader={true} pageTitle="Home">
+    <Layout showHeader={true} showLogo={true} pageTitle="Home">
 
-      <div className="section">
+
+      <section className="section">
         <button className="button is-info is-medium" style={{boxShadow: '3px 3px #dbdbdb'}} onClick={() => { 
             setShowFilter(!showFilter)
             setFilterValue(null)
@@ -26,13 +25,11 @@ const IndexPage = () => {
         }}>
           Filter
         </button>
-      </div>
+      </section>
 
-      <main className="section">
+      <main>
         <Table showFilter={showFilter} setShowFilter={setShowFilter} filterValue={filterValue} setFilterValue={setFilterValue} />
       </main>
-
-      <Logo />
       
     </Layout>
   )
