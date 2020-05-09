@@ -57,7 +57,7 @@ const About = () => {
             </section>
 
             <Logo />
-            
+
         </Layout>
     )
 }

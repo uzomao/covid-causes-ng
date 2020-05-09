@@ -87,12 +87,17 @@ const CauseTemplate = (props) => {
                             <div className="column is-half has-text-right has-text-left-mobile content">
                                 <h4 className="title is-4">Bank Details</h4>
                                 <p>{bankDetails}</p>
+                                <p style=
+                                    {{backgroundColor: '#1E272E', color: `#FAFAFA`, padding: '1px 4px'}}
+                                >We ask that you please reference 'COVID CAUSES NG' in your bank transfer {` `}
+                                    <span role="img" aria-label="orange heart emoji">🧡</span>
+                                </p>
                             </div>
                         </div>
                     </section>
 
                     <section className="section">
-                        <div class="content">
+                        <div className="content">
                             <h4 className="title is-4">Summary of Activities</h4>
                             <p>{summaryOfActivities.summaryOfActivities}</p>
                         </div>
