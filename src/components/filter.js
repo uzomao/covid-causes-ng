@@ -9,7 +9,7 @@ const Filter = ({ filters, setFilterValue, setShowFilter, setTableFilterBy }) =>
         { name: 'neighbourhood', formatted: 'Neighbourhood' },
         { name: 'aidProvided', formatted: 'Aid Provided' },
         { name: 'officialStatus', formatted: 'Official Status' },
-        { name: 'digitalEvidence', formatted: 'Digital Evidence' }
+        // { name: 'digitalEvidence', formatted: 'Digital Evidence' }
     ]
 
     const [ filter, setFilter ] = useState(null)
@@ -47,7 +47,7 @@ const Filter = ({ filters, setFilterValue, setShowFilter, setTableFilterBy }) =>
                                 <button onClick={() => { 
                                     setFilter(name)
                                     setTableFilterBy(name)
-                                }} className="is-size-2 filter-btn" style={hiddenBtnStyle}>
+                                }} className="is-size-2 is-size-4-mobile has-text-left filter-btn" style={hiddenBtnStyle}>
                                     {formatted}
                                 </button>
                             </h4>

@@ -27,15 +27,14 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
         neighbourhood: [],
         city: [],
         aidProvided: [],
-        officialStatus: [],
-        digitalEvidence: [true, false]
+        officialStatus: []
     }
 
     const [ tableFilterBy, setTableFilterBy ] = useState('city')
 
     function addFilters() {
 
-        const argumentKeys = ['neighbourhood', 'city', 'aidProvided', 'officialStatus', 'digitalEvidence']
+        const argumentKeys = ['neighbourhood', 'city', 'aidProvided', 'officialStatus']
 
         argumentKeys.forEach((key, index) => {
             const argument = arguments[index] //arguments[0] = neighbourhood e.g Karimo
@@ -54,9 +53,9 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
         query.allContentfulCause.nodes
 
     const tableBody = entries.map(({ name, neighbourhood, city, aidProvided, officialStatus, 
-        digitalEvidence, slug}, index) => {
+        slug}, index) => {
 
-            addFilters(neighbourhood, city, aidProvided, officialStatus, digitalEvidence)
+            addFilters(neighbourhood, city, aidProvided, officialStatus)
 
             return <tr 
                         key={index}
@@ -74,7 +73,7 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
         <>
         {
             filterValue &&
-                <div class="level" style={{width: '18%'}}>
+                <div class="section level" style={{width: '25%'}}>
                     <div class="level-left">
                         <p><b>Filter:</b> {filterValue} </p>
                     </div>
