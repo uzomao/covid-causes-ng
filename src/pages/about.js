@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from "../components/layout"
+import Logo from "../components/logo"
 
 const About = () => {
     return (
@@ -54,6 +55,9 @@ const About = () => {
 
                 </div>
             </section>
+
+            <Logo />
+            
         </Layout>
     )
 }

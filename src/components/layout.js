@@ -45,7 +45,7 @@ const Layout = ({ children, showHeader, pageTitle }) => {
     <footer className="footer">
       <div className="content has-text-centered">
         <p>
-          Covid Causes Nigeria &copy; {new Date().getFullYear()} 
+          Covid Causes Nigeria by Naija Tech Creatives &copy; {new Date().getFullYear()} 
         </p>
       </div>
     </footer>

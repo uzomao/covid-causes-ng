@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 
 import Table from '../components/table'
 
+import Logo from '../components/logo'
+
 const IndexPage = () => {
 
   const [ showFilter, setShowFilter ] = useState(false)
@@ -29,6 +31,8 @@ const IndexPage = () => {
       <main className="section">
         <Table showFilter={showFilter} setShowFilter={setShowFilter} filterValue={filterValue} setFilterValue={setFilterValue} />
       </main>
+
+      <Logo />
       
     </Layout>
   )
