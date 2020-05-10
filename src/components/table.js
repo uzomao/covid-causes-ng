@@ -51,6 +51,7 @@ const Table = ({ showFilter, setShowFilter, filterValue, setFilterValue }) => {
         })
         :
         query.allContentfulCause.nodes
+        .sort((a, b) => (a.name > b.name) ? 1 : -1)
 
     const tableBody = entries.map(({ name, neighbourhood, city, aidProvided, officialStatus, 
         slug}, index) => {

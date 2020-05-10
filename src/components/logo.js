@@ -27,7 +27,7 @@ const Logo = () => {
   `)
 
   return (
-      <figure style={{width: 150, height: 150, margin: '2% auto'}} >
+      <figure style={{width: 75, height: 75, margin: '2% auto'}} >
         <a href="https://instagram.com/naijatechcreatives" target="blank_" rel="noopener noreferrer">
           <Img fluid={data.logo.childImageSharp.fluid} />
         </a>
