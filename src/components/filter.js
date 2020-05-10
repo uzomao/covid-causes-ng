@@ -35,8 +35,17 @@ const Filter = ({ filters, setFilterValue, setShowFilter, setTableFilterBy }) =>
                 }}
         >
             
-            <div>
-                <h2 className='title has-text-weight-bold' style={{color: '#FFF'}}>Filter By</h2>
+            <div className="level">
+                <h2 className='level-left title has-text-weight-bold' style={{color: '#FFF'}}>Filter By</h2>
+                <button onClick={() => setShowFilter(false)}
+                className='level-right'
+                style={hiddenBtnStyle}
+                >
+                    <h2 className='level-right is-size-1 is-size-3-mobile has-text-weight-bold' 
+                    style={{paddingRight: '10px'}}>
+                        X
+                    </h2>
+                </button>   
             </div>
 
             <div className="columns section" style={{paddingLeft: 0}}>
