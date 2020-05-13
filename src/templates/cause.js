@@ -104,7 +104,7 @@ const CauseTemplate = (props) => {
                     </section>
 
                     <section className="section">
-                        <div class="content">
+                        <div className="content">
                             <h4 className="title is-4">Gallery</h4>
                             <div className="columns is-multiline">
                                 {
@@ -126,7 +126,7 @@ const CauseTemplate = (props) => {
                     </section>
 
                     <section className="column">
-                        <div class="content">
+                        <div className="content">
                             <h4 className="title is-4">Contact Info</h4>
 
                             {

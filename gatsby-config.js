@@ -6,7 +6,7 @@ module.exports = {
     author: `Covid Causes NG`,
     keywords: `covid, covid-19, coronavirus, lockdown, Nigeria, Abuja, Lagos`,
     siteUrl: `https://covidcauses.ng`,
-    image: `/icon.png`
+    image: `/flyer.png`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

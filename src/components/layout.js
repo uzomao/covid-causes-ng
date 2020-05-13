@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import SEO from '../components/seo'
 import Logo from '../components/logo'
+import SocialSharing from '../components/social-sharing'
 
 import "../styles/index.scss"
 
@@ -45,7 +46,7 @@ const Layout = ({ children, showHeader, pageTitle, showLogo }) => {
     </main>
 
     <footer>
-      { showLogo && <Logo /> }
+      { showLogo && <Logo /> && <SocialSharing />}
       <div className="footer">
         <div className="content has-text-centered">
           <p>
