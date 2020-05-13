@@ -18,6 +18,15 @@ const Header = ({ siteTitle, siteDescription }) => (
           <Link to="/about" className="is-size-4" style={{
             textDecoration: 'underline'
           }}>About Covid Causes</Link>
+          <p style={{marginTop: '5px'}}>
+            <a href="https://covidcausesng.typeform.com/to/KvwGm4"
+              className="button is-link is-size-6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Add your cause
+            </a>
+          </p>
         </div>
       </div>
   </section>

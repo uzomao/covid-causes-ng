@@ -50,7 +50,7 @@ const About = () => {
 
                     <p>
                         Covid Causes is supported by <a href="https://naijatechcreatives.com">Naija Tech Creatives</a>.{` `}
-                        Please email <a href="mailto:naijatechcreatives@gmail.com">naijatechcreatives@gmail.com</a> if you would 
+                        Please fill out <a href="https://covidcausesng.typeform.com/to/KvwGm4">this form</a> if you would 
                         like to add your relief initiative.
                     </p>
 
