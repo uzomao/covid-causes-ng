@@ -4,7 +4,7 @@ module.exports = {
     titleTemplate: "%s | Covid Causes Nigeria",
     description: `A directory of individuals and organisations in Nigeria providing relief during the crisis.`,
     author: `Covid Causes NG`,
-    keywords: `covid, covid 19, coronavirus, lockdown, Nigeria, Abuja, Lagos`,
+    keywords: `covid, covid-19, coronavirus, lockdown, Nigeria, Abuja, Lagos`,
     siteUrl: `https://covidcauses.ng`,
     image: `/icon.png`
   },
@@ -41,6 +41,7 @@ module.exports = {
           spaceId:  process.env.CONTENTFUL_SPACE_ID,
           accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
       }
-    }
+    },
+    `gatsby-plugin-sitemap`
   ],
 }
