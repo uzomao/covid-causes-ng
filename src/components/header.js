@@ -21,6 +21,7 @@ const Header = ({ siteTitle, siteDescription }) => (
           <p style={{marginTop: '5px'}}>
             <a href="https://covidcausesng.typeform.com/to/KvwGm4"
               className="button is-link is-size-6"
+              style={{boxShadow: '3px 3px #dbdbdb'}}
               target="_blank"
               rel="noopener noreferrer"
             >
