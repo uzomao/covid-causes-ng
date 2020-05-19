@@ -46,7 +46,8 @@ const Layout = ({ children, showHeader, pageTitle, showLogo }) => {
     </main>
 
     <footer>
-      { showLogo && <Logo /> && <SocialSharing />}
+      { showLogo && <Logo /> }
+      { showLogo && <SocialSharing /> }
       <div className="footer">
         <div className="content has-text-centered">
           <p>
