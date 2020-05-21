@@ -110,13 +110,14 @@ const CauseTemplate = (props) => {
                                 {
                                     images ?
                                         images.map((image, index) => 
-                                            <Img 
-                                                key={index}
-                                                className="column is-one-third"
-                                                // style={{margin: '.1em'}}
-                                                fluid={image.fluid} 
-                                                alt={`photo of ${name} in action`} 
-                                            />
+                                            <div className="column is-one-third">
+                                                <Img 
+                                                    key={index}
+                                                    // style={{margin: '.1em'}}
+                                                    fluid={image.fluid} 
+                                                    alt={`photo of ${name} in action`} 
+                                                />
+                                            </div>
                                         )
                                         :
                                         <p className="column is-one-third">No images provided</p>
