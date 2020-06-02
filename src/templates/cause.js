@@ -6,6 +6,8 @@ import Layout from "../components/layout"
 
 import Img from "gatsby-image"
 
+import '../styles/cause.css'
+
 export const query = graphql`
     query($slug: String) {
         contentfulCause (slug: {
@@ -58,18 +60,15 @@ const CauseTemplate = (props) => {
                     <div className="hero-body">
                         <div className="container is-fluid columns">
                             <div className="column">
+                                <Link to="/" className="button is-info" style={{marginBottom: '1em'}}>
+                                    <h4 className="is-size-5">Back to all</h4>
+                                </Link>
                                 <h1 className="title is-size-1-mobile">
                                     {name}
                                 </h1>
                                 <h2 className="subtitle is-uppercase">
                                     {officialStatus}
                                 </h2>
-                            </div>
-
-                            <div className="column has-text-right has-text-left-mobile">
-                                <Link to="/" className="button is-info">
-                                    <h4 className="is-size-4">Back to all</h4>
-                                </Link>
                             </div>
                         </div>
                     </div>
@@ -84,11 +83,16 @@ const CauseTemplate = (props) => {
                                 <p><b>Aid Provided: </b> {aidProvided}</p>
                             </div>
 
-                            <div className="column is-half has-text-right has-text-left-mobile content">
+                            <div className="column is-one-third is-offset-2 has-text-right has-text-left-mobile content bank-details">
                                 <h4 className="title is-4">Bank Details</h4>
-                                <p>{bankDetails}</p>
-                                <p style=
-                                    {{backgroundColor: '#1E272E', color: `#FAFAFA`, padding: '1px 4px'}}
+                                {
+                                    bankDetails.split(', ').map((detail, index) => 
+                                        <p key={index} className="is-size-5">
+                                            {detail}
+                                        </p>
+                                    )
+                                }
+                                <p className="is-size-6 ask"
                                 >We ask that you please reference 'COVID CAUSES NG' in your bank transfer {` `}
                                     <span role="img" aria-label="orange heart emoji">🧡</span>
                                 </p>
